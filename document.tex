@@ -1,0 +1,115 @@
+% ====================================================================
+% Unofficial McGill Masters Thesis Template
+% Copyright (C) 2018  Xavier Capaldi (xcapaldi @ Github)
+%
+% This template is free: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% This template is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+% ====================================================================
+
+% ---
+% Masters thesis should be less than 100 (soft cap) or 150 (hard cap)
+% That being said, it should be concise and follow all norms of academic writing
+% Appendices can be used to present supplementary or raw data
+% Script and Page Format: conventional font, size 12-point, 12 characters per inch, 1.5 or 2 line spacing, left and right margins 1 inch
+% footnotes, references and appendices should follow standard style of your discipline
+% avoid full-page images and plots
+% ---
+
+\documentclass[12pt,oneside,openany,letterpaper]{book} % book defaults: twoside, titlepage, openright (always start chapters on odd pages) These are good for printing. Otherwise use settings here. Draft makes it so that images are not rendered (just a box)
+\usepackage{mystyle} % call my custom style file containing all the used packages and settings
+%\includeonly{./tex/section-a} % use to compile only sections of document
+
+\begin{document}
+
+\frontmatter % the following pages will be roman numerals
+% ----------
+% Title Page
+% ----------
+\include{./tex/title} % or use defaults %%
+% title of thesis
+% student's name and unit (department)
+% month and year of submission
+% "A thesis submitted to McGill University in partial fulfillment of the requirements of the degree of ..."
+% the universal copyright notice "\textcopyright" (this will require the textcomp package if you want it to look nice) followed by the student's name and the year the thesis was submitted
+% -----------------
+% Table of Contents
+% -----------------
+% must be detailed
+\setcounter{tocdepth}{3} % change this to control the depth of the generated table of contents
+\tableofcontents %%
+%\listoffigures % not sure these are necessary
+%\listoftables % not sure these are necessary
+% --------
+% Abstract
+% ---------
+\include{./tex/abstract}
+\include{./tex/abrege}
+% brief abstract in both English and French
+% ----------------
+% Acknowledgements
+% ----------------
+\include{./tex/acknowledgements} %%
+% recognize the supervision and advice given by the thesis supervisor(s) and advisors
+% also, you must declare the extent to which assistance (paid and unpaid) has been given by members of staff, fellow students, research assistants, technicians, or others in collection of materials and data, the design and construction of apparatus, the performance of experiments, analysis of data, and the preparation of the thesis (including editorial help)
+% -----------------------------------------
+% Statement of Originality and Contribution
+% -----------------------------------------
+\include{./tex/original-work} 
+% clearly state the elements of the thesis that are considered original scholarship and distinct contributions to knowledge
+% contributions of the student to each chapter must be explicitly stated
+% contributions of any co-authors to each chapter must be explicitly stated
+
+\mainmatter % book specific that specifies to switch page numbering
+% ------------
+% Introduction
+% ------------
+% clearly state the rational and objectives of the research
+\chapter{Introduction}
+  \include{./tex/introduction}
+% -----------------
+% Literature Review
+% -----------------
+% literature review must be comprehensive and in line with disciplinary expectations
+\chapter{Review of XYZ}
+  \include{./tex/review-x}
+  \include{./tex/review-y}
+  \include{./tex/review-z}
+
+% --------------
+% Body of Thesis
+% --------------
+% should contain sections on methodology and research finding
+% -----------
+% Methodology
+% -----------
+\chapter{Methodology}
+  \include{./tex/methodology-x}
+  \include{./tex/methodology-y}
+  \include{./tex/methodology-z}
+% --------------------------------
+% Scholarly Discussion of Findings
+% --------------------------------
+\chapter{Results}
+  \include{./tex/results}
+% ----------------------------
+% Final Conclusion and Summary
+% ----------------------------
+% State how the objectives of the research were met and discuss implications of findings
+\chapter{Conclusion}
+  \include{./tex/conclusion}
+%\clearpage
+%\appendix
+  %\include{./tex/myappendix}
+
+% ---------------------------------------
+% Thorough Bibliography or Reference List
+% ---------------------------------------
+\printbibliography[title={References},heading=bibintoc]
+\end{document}

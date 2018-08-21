@@ -1,0 +1,58 @@
+% ====================================================================
+% Unofficial McGill Masters Thesis Template
+% Copyright (C) 2018  Xavier Capaldi (xcapaldi @ Github)
+%
+% This template is free: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% This template is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+% ====================================================================
+
+\ProvidesPackage{mystyle}
+
+\usepackage{graphicx} % allows use of images
+\graphicspath{ {./img/} }
+
+
+\usepackage[utf8]{inputenc} % set encoding to UTF8
+
+\usepackage[letterpaper,hmargin={1in,1in}]{geometry} % adjust page margins to 1 inch
+
+%%% Header and Footer %%%
+% Make sure you import the geometry package before this or the layout will be off.
+\usepackage{fancyhdr} % customize header and footer
+\pagestyle{fancy} % initialize fancyhdr usepackage
+\fancyhf{}
+\renewcommand{\sectionmark}[1]{\markright{#1}} % redefine the following command so that
+\fancyhead[LE,RO]{\rightmark} % name and number of current section
+\fancyhead[RE,LO]{\thepage} % page number
+\renewcommand{\headrulewidth}{2pt} % make horizontal rule thicker
+
+\usepackage{textcomp} % use nicely formatted \textcopyright and \textregistered
+
+\usepackage{fontspec} % use of system fonts (must compile with XeLaTeX)
+\setmainfont{Times New Roman} % set which system font to use
+
+\usepackage[onehalfspacing]{setspace} % change line spacing omitting references and captions. can also use /linespread instead (built-in). doublespacing is for 2x line spacing
+
+\usepackage{polyglossia} % multilingual support for XeLaTeX (babel is for pdfLaTeX)
+\setmainlanguage{english}
+\setotherlanguage{french}
+
+\usepackage{siunitx} % allow easy calling of SI units (look at package documentation for usage: \si{\micro\meter})
+\DeclareSIUnit\torr{torr} % declare torr as a unit that can be called
+\DeclareSIUnit\Molar{\textsc{m}} % declare Mole as a unit that can be called
+
+\usepackage[version=4]{mhchem} % allow easy writing of chemical formulas (look at package documentation for usage: \ce{H2O})
+
+\usepackage{lipsum} % allow me to add dummy text to this template
+
+\usepackage[backend=biber,style=numeric,citestyle=numeric]{biblatex} % reference package which uses the biber backend
+\addbibresource{library.bib}
+
+\usepackage[xetex,hidelinks,pdftitle={Masters Thesis},pdfauthor={YOUR NAME},pdfsubject={YOUR FIELD}]{hyperref} % allow interdocument pdf links
